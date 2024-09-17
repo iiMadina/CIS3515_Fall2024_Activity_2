@@ -17,11 +17,11 @@ class MainActivity : AppCompatActivity() {
             i -> (i + 1) * 5
         };
 
-        /* TODO Step 3: Create adapter to display items from array in Spinner */
+        // Create adapter to display items from array in Spinner
         spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, numberArray)
 
 
-        // TODO Step 4: Change TextView's text size to the number selected in the Spinner */
+        // Change TextView's text size to the number selected in the Spinner
         spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                TODO("Not yet implemented")
+                // !! tells compiler that even tho parent is nullable, it probably won't be
+                displayTextView.textSize = parent!!.getItemAtPosition(position) as Float
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
 
         }
