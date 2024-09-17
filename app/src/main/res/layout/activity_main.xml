@@ -6,15 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- TODO Step 1: Modify View attributes so views stay in place as arranged-->
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="292dp"
         android:minHeight="48dp"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="64dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_contraintTop_toBottomOf="@+id/textDisplay" />
 
     <TextView
         android:id="@+id/textDisplay"
@@ -24,7 +29,9 @@
         android:shadowDx="40"
         android:shadowDy="30"
         android:shadowRadius="30"
-        android:text="Air Supply is the best band EVER!"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="277dp" />
+        android:text="@string/text"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
