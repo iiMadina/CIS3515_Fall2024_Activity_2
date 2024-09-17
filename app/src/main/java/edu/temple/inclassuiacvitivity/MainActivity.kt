@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         val spinner = findViewById<Spinner>(R.id.spinner)
         val displayTextView = findViewById<TextView>(R.id.textDisplay)
 
-        /* TODO Step 2: Populate this array with multiples of 5 from 5 - 100*/
-        val numberArray = Array((100/5)-1) {
+        // multiples of 5 from 5 - 100
+        val numberArray = Array(100/5) {
             i -> (i + 1) * 5
         };
 
@@ -22,7 +22,21 @@ class MainActivity : AppCompatActivity() {
 
 
         // TODO Step 4: Change TextView's text size to the number selected in the Spinner */
-        //spinner.onItemSelectedListener = object: ...
+        spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
 
     }
 }
