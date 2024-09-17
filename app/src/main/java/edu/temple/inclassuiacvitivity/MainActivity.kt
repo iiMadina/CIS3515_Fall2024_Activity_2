@@ -13,11 +13,12 @@ class MainActivity : AppCompatActivity() {
         val displayTextView = findViewById<TextView>(R.id.textDisplay)
 
         /* TODO Step 2: Populate this array with multiples of 5 from 5 - 100*/
-        // val numberArray = Array Of Numbers
-        for (i: Integer = 5; i <= 100; i = i * 5)
+        val numberArray = Array((100/5)-1) {
+            i -> (i + 1) * 5
+        };
 
         /* TODO Step 3: Create adapter to display items from array in Spinner */
-        //spinner.adapter = ArrayAdapter...
+        spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, numberArray)
 
 
         // TODO Step 4: Change TextView's text size to the number selected in the Spinner */
