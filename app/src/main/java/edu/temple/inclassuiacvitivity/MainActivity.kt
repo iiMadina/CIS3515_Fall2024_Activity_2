@@ -29,12 +29,7 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                view?.run {
-                    val size = numberArray[position].toFloat()
-                    displayTextView.textSize = size
-                }
-                // !! tells compiler that even tho parent is nullable, it probably won't be
-                // displayTextView.textSize = parent!!.getItemAtPosition(position) as Float
+                displayTextView.textSize = numberArray[position].toFloat()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
