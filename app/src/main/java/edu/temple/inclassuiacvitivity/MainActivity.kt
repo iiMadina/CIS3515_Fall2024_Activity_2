@@ -2,6 +2,7 @@ package edu.temple.inclassuiacvitivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Size
 import android.view.View
 import android.widget.*
 class MainActivity : AppCompatActivity() {
@@ -20,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         // Create adapter to display items from array in Spinner
         spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, numberArray)
 
-
         // Change TextView's text size to the number selected in the Spinner
         spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -29,8 +29,12 @@ class MainActivity : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
+                view?.run {
+                    val size = numberArray[position].toFloat()
+                    displayTextView.textSize = size
+                }
                 // !! tells compiler that even tho parent is nullable, it probably won't be
-                displayTextView.textSize = parent!!.getItemAtPosition(position) as Float
+                // displayTextView.textSize = parent!!.getItemAtPosition(position) as Float
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
